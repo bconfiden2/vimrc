@@ -30,3 +30,5 @@ set ignorecase
 set incsearch
 " Automatically switch search to case-sensitive, when query contains an uppercase
 set smartcase
+
+colorscheme molokai
