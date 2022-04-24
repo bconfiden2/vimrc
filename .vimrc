@@ -11,16 +11,18 @@ set autoindent
 set smartindent
 
 " 항상 커서의 위치를 표시함
-"set ruler
+set ruler
 
 " 아래줄에 상태 바를 항상 표시
-"set laststatus=2
+set laststatus=2
 
 " 경고음 대신 스크린을 반짝이게함
 "set visualbell
 
-" 현재 위치한 줄에 밑줄쳐줌
-"set cursorline
+" 현재 위치한 줄에 하이라이트
+set cursorline
+" 현재 위치한 열에 하이라이트
+set cursorcolumn
 
 " 검색과 매칭되는 모든 문자열 표시, :noh 로 해제
 set hlsearch
@@ -32,4 +34,15 @@ set incsearch
 set smartcase
 
 " 색감 테마 지정
-colorscheme molokai
+colorscheme darcula 
+
+" 파일을 열 때, 종료하기 전 커서의 위치로 이동
+au BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\ exe "norm g`\"" |
+\ endif
+
+" 구문 하이라이트
+if has("syntax")
+    syntax on
+endif
