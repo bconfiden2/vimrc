@@ -3,6 +3,9 @@ set nu
 
 " 탭을 스페이스로 변환
 set smarttab
+set expandtab
+set tabstop=4
+set softtabstop=4
 " 시프트 크기를 4로 지정
 set shiftwidth=4
 
